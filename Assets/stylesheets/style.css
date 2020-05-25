@@ -1,5 +1,5 @@
 body{
-	background: url(assets/images/background.png) no-repeat center bottom fixed;
+	background: url(../images/background.png) no-repeat center bottom fixed;
 	background-color: #bdf4ff;
 	background-size: contain;
 	color: black;
@@ -10,7 +10,7 @@ body{
 
 .confirm{
 	min-width: 150px;
-	background-image: url("assets/images/light.png");
+	background-image: url("../images/light.png");
 	border-radius: 3px;
 	height: 4em;
 	font-weight: bolder;
@@ -45,7 +45,7 @@ input{
 }
 
 .personnage{
-	background-image: url("assets/images/light.png");
+	background-image: url("../images/light.png");
 	border: 1px solid black;
 	border-radius: 3px;
 	display: flex;
