@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Moteur de combat</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="MobileOptimized" content="width">
+	<meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Cardo&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="test">
+		<div class="container fadeIn">
+			<h1 align="center">Moteur de combat</h1>
+			<div class="trait"></div>
+			<div id="Hstats" align="center" class="personnage fadeIn">
+				<h3>Héro :</h3>
+				<div class="case">
+					<label>Habileté :</label>
+					<input type="number" id="Hhability" min="0" value="0">
+				</div>
+				<div class="case">
+					<label>Endurance :</label>
+					<input type="number" id="Hstamina" min="0" value="0" class="fast">
+				</div>
+				<div class="case">
+					<label>Chance :</label>
+					<input type="number" id="Hluck" min="0" value="0" class="fast">
+				</div>
+			</div>
+
+			<br>
+
+			<div id="Mstats" align="center" class="personnage fadeIn">
+				<h3>Adversaire :</h3>
+				<div class="case">
+					<label>Habileté :</label>
+					<input type="number" id="Mhability" min="0" value="0">
+				</div>
+				<div class="case">
+					<label>Endurance :</label>
+					<input type="number" id="Mstamina" min="0" value="0" class="fast">
+				</div>
+				<div class="case">
+					<label>Chance :</label>
+					<input type="number" id="Mluck" min="0" value="0" class="fast">
+				</div>
+			</div>
+
+			<br>
+
+			<div id="confirmblock" align="center">
+				<input class="confirm" id="fight" type="button" name="Combat" value="Combat !">
+				<input class="confirm" id="restart" type="button" name="Restart" value="Recommancer">
+			</div>
+		</div>
+
+		<div id="result">
+			
+		</div>
+
+
+	</div>
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>

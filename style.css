@@ -1,0 +1,109 @@
+body{
+	background: url(background.png) no-repeat center bottom fixed;
+	background-color: #bdf4ff;
+	background-size: contain;
+	color: black;
+	font-family: 'Cardo', serif;
+	font-style: italic;
+  	min-height : 100%;
+}
+
+.confirm{
+	min-width: 150px;
+	background-image: url("light.png");
+	border-radius: 3px;
+	height: 4em;
+	font-weight: bolder;
+	font-style: italic;
+	position: relative;
+
+}
+
+.container{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+h1{
+	font-size: 2em;
+	font-weight: 100;
+}
+
+label{
+	padding-right: 5px;
+	text-align: center;
+	min-width: 100px;
+	display: block;
+	border: 1px solid black;
+}
+
+input{
+	width: 20%;
+	text-align: center;
+	display: block;
+}
+
+.personnage{
+	background-image: url("light.png");
+	border: 1px solid black;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 20vh;
+	color: black;
+	padding-bottom: 15px;
+}
+
+.case{
+	width: 100%;
+	display: flex;
+	justify-content : center;
+}
+
+.trait{
+	height: 2px;
+	background-color: lightgrey;
+	width: 50%;
+	margin: auto;
+	margin-top: -15px;
+	margin-bottom: 15px;
+}
+
+.flash{
+	animation-name: flash;
+	animation-duration: 0.10s;
+	animation-iteration-count: 2;
+}
+
+.fadeIn{
+	animation-name: fadeIn;
+	animation-duration: 2s;
+}
+
+.delay1{
+	animation-delay: 1s;
+}
+
+#result{
+	font-size: 12px;
+	background-color: darkblue;
+	color : white;
+}
+
+@keyframes flash {
+	0%{background-color: white;background-image: none;}
+	50% {background-color: red;background-image: none;}
+	100% {background-color: white;background-image: none;}
+}
+
+@keyframes fadeIn {
+	0%{opacity: 0;}
+	100% {opacity: 100%;}
+}
+
+#confirmblock{
+	display: flex;
+	justify-content: space-around;
+}
