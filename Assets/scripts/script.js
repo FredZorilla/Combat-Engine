@@ -13,6 +13,11 @@ $(document).ready(function(){
 
 $("#fight").click(function(){
 
+	var luckbox = document.getElementById("luckbox");
+	if (luckbox.checked == true) {
+		console.log("c'est coché!");
+	}
+
 	$(this).prop("disabled", "true");
 
 	var decompte1 = new Audio('assets/sounds/decompte1.wav');
@@ -33,57 +38,116 @@ $("#fight").click(function(){
 	$("#Hstamina").prop("disabled", true);
 	$("#Mstamina").prop("disabled", true);
 
-	var Hdice = parseInt(Math.floor((Math.random() * 12) + 1));
-	var Hhability = $("#Hhability").val();
-	var Hstamina = $("#Hstamina").val();
-	var Hresultat = (+Hdice)+(+Hhability);
+	if (luckbox.checked == false){
 
-	var Mdice = parseInt(Math.floor((Math.random() * 12) + 1));
-	var Mhability = $("#Mhability").val();
-	var Mstamina = $("#Mstamina").val();
-	var Mresultat = (+Mdice)+(+Mhability);
+		var Hdice = parseInt(Math.floor((Math.random() * 12) + 1));
+		var Hhability = $("#Hhability").val();
+		var Hstamina = $("#Hstamina").val();
+		var Hresultat = (+Hdice)+(+Hhability);
 
-	$("#result").html("<hr>");
-	setTimeout(function(){
-		decompte1.play();
-		$("#result").append("Vous frappez pour un score de combat de (" +Hhability + " + " + Hdice + ") :<strong> "+Hresultat+"</strong><br>");
-	},500);
-	setTimeout(function(){
-		decompte2.play();
-		$("#result").append("L'adversaire vous frappe pour un score de combat de (" +Mhability+ " + " + Mdice  + ") :<strong> "+Mresultat+"</strong><br>");
-	},1500);
+		var Mdice = parseInt(Math.floor((Math.random() * 12) + 1));
+		var Mhability = $("#Mhability").val();
+		var Mstamina = $("#Mstamina").val();
+		var Mresultat = (+Mdice)+(+Mhability);
 
-	if (Hresultat > Mresultat) {
+		$("#result").html("<hr>");
 		setTimeout(function(){
-		decomptesuccess.play();
-		var newMstamina = Mstamina-2;
-		$("#Mstamina").val(newMstamina);
-		$("#result").append("L'adversaire perd 2 points de vie.<br>");
-		$("#Mstamina").addClass("animated");
-		$("#Mstamina").addClass("bounce");
-		$("#Mstats").addClass("flash");
-		},2500);
-	}
-	else if (Hresultat < Mresultat) {
+			decompte1.play();
+			$("#result").append("Vous frappez pour un score de combat de (" +Hhability + " + " + Hdice + ") :<strong> "+Hresultat+"</strong><br>");
+		},500);
 		setTimeout(function(){
-		decomptefail.play();
-		var newHstamina = Hstamina-2;
-		$("#Hstamina").val(newHstamina);
-		$("#result").append("Vous perdez 2 points de vie.<br>");
-		$("#Hstamina").addClass("animated");
-		$("#Hstamina").addClass("bounce");
-		$("#Hstats").addClass("flash");
-		},2500);
-	}
-	else if (Hresultat == Mresultat){
+			decompte2.play();
+			$("#result").append("L'adversaire vous frappe pour un score de combat de (" +Mhability+ " + " + Mdice  + ") :<strong> "+Mresultat+"</strong><br>");
+		},1500);
+
+		if (Hresultat > Mresultat) {
+			setTimeout(function(){
+			decomptesuccess.play();
+			var newMstamina = Mstamina-2;
+			$("#Mstamina").val(newMstamina);
+			$("#result").append("L'adversaire perd 2 points de vie.<br>");
+			$("#Mstamina").addClass("animated");
+			$("#Mstamina").addClass("bounce");
+			$("#Mstats").addClass("flash");
+			},2500);
+		}
+		else if (Hresultat < Mresultat) {
+			setTimeout(function(){
+			decomptefail.play();
+			var newHstamina = Hstamina-2;
+			$("#Hstamina").val(newHstamina);
+			$("#result").append("Vous perdez 2 points de vie.<br>");
+			$("#Hstamina").addClass("animated");
+			$("#Hstamina").addClass("bounce");
+			$("#Hstats").addClass("flash");
+			},2500);
+		}
+		else if (Hresultat == Mresultat){
+			setTimeout(function(){
+			$("#result").append("Égalité, le combat continu.<br>");
+			},2500);
+		}
+
 		setTimeout(function(){
-		$("#result").append("Égalité, le combat continu.<br>");
-		},2500);
+				$("#result").append("<hr>");
+				$("#fight").prop("disabled", "");			
+			},2500);
 	}
 
-	setTimeout(function(){
-			$("#result").append("<hr>");
-			$("#fight").prop("disabled", "");			
-		},2500);
+	if (luckbox.checked == true){
+
+		var Hdice = parseInt(Math.floor((Math.random() * 12) + 1));
+		var Hhability = $("#Hhability").val();
+		var Hstamina = $("#Hstamina").val();
+		var Hresultat = (+Hdice)+(+Hhability);
+
+		var Mdice = parseInt(Math.floor((Math.random() * 12) + 1));
+		var Mhability = $("#Mhability").val();
+		var Mstamina = $("#Mstamina").val();
+		var Mresultat = (+Mdice)+(+Mhability);
+
+		$("#result").html("<hr>");
+		setTimeout(function(){
+			decompte1.play();
+			$("#result").append("Vous frappez pour un score de combat de (" +Hhability + " + " + Hdice + ") :<strong> "+Hresultat+"</strong><br>");
+		},500);
+		setTimeout(function(){
+			decompte2.play();
+			$("#result").append("L'adversaire vous frappe pour un score de combat de (" +Mhability+ " + " + Mdice  + ") :<strong> "+Mresultat+"</strong><br>");
+		},1500);
+
+		if (Hresultat > Mresultat) {
+			setTimeout(function(){
+			decomptesuccess.play();
+			var newMstamina = Mstamina-2;
+			$("#Mstamina").val(newMstamina);
+			$("#result").append("L'adversaire perd 2 points de vie.<br>");
+			$("#Mstamina").addClass("animated");
+			$("#Mstamina").addClass("bounce");
+			$("#Mstats").addClass("flash");
+			},2500);
+		}
+		else if (Hresultat < Mresultat) {
+			setTimeout(function(){
+			decomptefail.play();
+			var newHstamina = Hstamina-2;
+			$("#Hstamina").val(newHstamina);
+			$("#result").append("Vous perdez 2 points de vie.<br>");
+			$("#Hstamina").addClass("animated");
+			$("#Hstamina").addClass("bounce");
+			$("#Hstats").addClass("flash");
+			},2500);
+		}
+		else if (Hresultat == Mresultat){
+			setTimeout(function(){
+			$("#result").append("Égalité, le combat continu.<br>");
+			},2500);
+		}
+
+		setTimeout(function(){
+				$("#result").append("<hr>");
+				$("#fight").prop("disabled", "");			
+			},2500);
+	}
 
 });

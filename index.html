@@ -22,15 +22,15 @@
 			<div id="Hstats" align="center" class="personnage fadeIn">
 				<h3>Héro :</h3>
 				<div class="case">
-					<label>Habileté :</label>
+					<label class="label-box">Habileté :</label>
 					<input type="number" id="Hhability" min="0" value="0">
 				</div>
 				<div class="case">
-					<label>Endurance :</label>
+					<label class="label-box">Endurance :</label>
 					<input type="number" id="Hstamina" min="0" value="0" class="fast">
 				</div>
 				<div class="case">
-					<label>Chance :</label>
+					<label class="label-box">Chance :</label>
 					<input type="number" id="Hluck" min="0" value="0" class="fast">
 				</div>
 			</div>
@@ -40,20 +40,26 @@
 			<div id="Mstats" align="center" class="personnage fadeIn">
 				<h3>Adversaire :</h3>
 				<div class="case">
-					<label>Habileté :</label>
+					<label class="label-box">Habileté :</label>
 					<input type="number" id="Mhability" min="0" value="0">
 				</div>
 				<div class="case">
-					<label>Endurance :</label>
+					<label class="label-box">Endurance :</label>
 					<input type="number" id="Mstamina" min="0" value="0" class="fast">
 				</div>
 				<div class="case">
-					<label>Chance :</label>
+					<label class="label-box">Chance :</label>
 					<input type="number" id="Mluck" min="0" value="0" class="fast">
 				</div>
 			</div>
 
 			<br>
+
+			<div class="ligne">
+				<p>Utiliser chance ?</p>
+				<input id="luckbox" type="checkbox" name="luckbox">
+			</div>
+			
 
 			<div id="confirmblock" align="center">
 				<input class="confirm" id="fight" type="button" name="Combat" value="Combat !">

@@ -30,7 +30,7 @@ h1{
 	font-weight: 100;
 }
 
-label{
+.label-box{
 	padding-right: 5px;
 	text-align: center;
 	min-width: 100px;
@@ -54,6 +54,20 @@ input{
 	min-height: 20vh;
 	color: black;
 	padding-bottom: 15px;
+}
+
+.ligne{
+	background-image: url("../images/light.png");
+	border: 1px solid black;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	min-height: 3vh;
+	color: black;
+
+	margin-bottom: 15px; 
 }
 
 .case{
