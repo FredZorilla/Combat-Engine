@@ -29,8 +29,13 @@ input[type=checkbox] {
 }
 
 h1{
-	font-size: 2em;
+	font-size: 1.5em;
 	font-weight: 100;
+	margin-top: .2em;
+}
+
+h3{
+	margin: .5em;
 }
 
 .label-box{
@@ -107,6 +112,8 @@ input{
 	font-size: 12px;
 	background-color: darkblue;
 	color : white;
+	padding: .5em;
+    margin: .5em;
 }
 
 @keyframes flash {
@@ -126,6 +133,5 @@ input{
 }
 
 .ligne input{
-
 	width: auto	;
 }

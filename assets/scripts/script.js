@@ -13,11 +13,11 @@ $(document).ready(function(){
 
 $("#fight").click(function(){
 
-	var luckbox = document.getElementById("luckbox");
-	if (luckbox.checked == true) {
-		console.log("c'est coché!");
-	}
+	
+var Aluckbox = $("#Aluckbox").prop("checked");
+var Dluckbox = $("#Aluckbox").prop("checked");
 
+		console.log(Aluckbox);
 	$(this).prop("disabled", "true");
 
 	var decompte1 = new Audio('assets/sounds/decompte1.wav');
@@ -38,7 +38,7 @@ $("#fight").click(function(){
 	$("#Hstamina").prop("disabled", true);
 	$("#Mstamina").prop("disabled", true);
 
-	if (luckbox.checked == false){
+	if (Aluckbox == false){
 
 		var Hdice = parseInt(Math.floor((Math.random() * 12) + 1));
 		var Hhability = $("#Hhability").val();
@@ -94,7 +94,7 @@ $("#fight").click(function(){
 			},2500);
 	}
 
-	if (luckbox.checked == true){
+	if (Aluckbox == true){
 
 		var Hdice = parseInt(Math.floor((Math.random() * 12) + 1));
 		var Hhability = $("#Hhability").val();
