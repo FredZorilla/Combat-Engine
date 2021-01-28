@@ -12,6 +12,10 @@ input[type=checkbox] {
     margin: 1em;
 }
 
+.hidden{
+	display: none;
+}
+
 .confirm{
 	min-width: 150px;
 	background-image: url("../images/light.png");

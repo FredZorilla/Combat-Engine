@@ -13,11 +13,15 @@ $(document).ready(function(){
 
 $("#fight").click(function(){
 
-	
-var Aluckbox = $("#Aluckbox").prop("checked");
-var Dluckbox = $("#Aluckbox").prop("checked");
+	$("#result").addClass("hidden");
+		setTimeout(function(){
+			$("#result").removeClass("hidden");
+		},500);
 
-		console.log(Aluckbox);
+	var Aluckbox = $("#Aluckbox").prop("checked");
+	var Dluckbox = $("#Aluckbox").prop("checked");
+
+	console.log(Aluckbox);
 	$(this).prop("disabled", "true");
 
 	var decompte1 = new Audio('assets/sounds/decompte1.wav');
