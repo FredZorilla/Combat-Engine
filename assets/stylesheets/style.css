@@ -6,6 +6,7 @@ body{
 	background-position: bottom; 
 	color: black;
   	min-height : 100%;
+  	
 }
 input[type=checkbox] {
     transform: scale(2);
@@ -63,7 +64,6 @@ input{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	min-height: 20vh;
 	color: black;
 	padding-bottom: 15px;
 }
@@ -76,7 +76,6 @@ input{
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-height: 3vh;
 	color: black;
 	padding: 1em;
 	margin-bottom: 15px; 
