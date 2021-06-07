@@ -19,9 +19,10 @@ $("#fight").click(function(){
 		},500);
 
 	var Aluckbox = $("#Aluckbox").prop("checked");
-	var Dluckbox = $("#Aluckbox").prop("checked");
+	var Dluckbox = $("#Dluckbox").prop("checked");
 
 	console.log(Aluckbox);
+	console.log(Dluckbox);
 	$(this).prop("disabled", "true");
 
 	var decompte1 = new Audio('assets/sounds/decompte1.wav');
