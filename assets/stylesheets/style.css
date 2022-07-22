@@ -88,6 +88,10 @@ input{
 	align-items: center;
 }
 
+.mini-row p{
+	margin: 0;
+}
+
 .case{
 	width: 100%;
 	display: flex;

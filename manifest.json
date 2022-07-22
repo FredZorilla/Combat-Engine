@@ -1,0 +1,12 @@
+{
+	"name": "Combat-Engine",
+	"background_color": "#FF0000",
+	"theme_color": "#FF0000",
+	"start-url": "/combat-engine/index.html",
+	"orientation": "portrait",
+	"icons": [{
+	"src": "assets/images/favicon.png",
+	"size": "192x192",
+	"type": "image/png"
+	}]
+}

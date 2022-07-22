@@ -71,16 +71,32 @@ $("#fight").click(function(){
 
 		if ($("#Aluckbox").prop("checked") == false){
 			var newMstamina = Mstamina-2;
+			$("#result").append("L'adversaire perd 2 PV.<br>");
 		}
 		else{
-			var newMstamina = Mstamina-4;
-			var newHluck = Hluck - 1;
-			document.getElementById("Aluckbox").checked = false;
-			$("#Hluck").val(newHluck);
+			var Luck_dice = parseInt(Math.floor((Math.random() * 12) + 1));
+			console.log("dé chance = " + Luck_dice);
+			if (Luck_dice < Hluck){
+				var newMstamina = Mstamina-4;
+				var newHluck = Hluck - 1;
+				$("#result").append("Un coup chanceux ! L'adversaire perd 4 PV. Vous utilisez 1 point de chance<br>");
+				document.getElementById("Aluckbox").checked = false;
+				document.getElementById("Dluckbox").checked = false;
+				$("#Hluck").val(newHluck);
+			}
+			else{
+				var newMstamina = Mstamina-1;
+				var newHluck = Hluck - 1;
+				$("#result").append("PAS DE CHANCE, l'adversaire ne perd que 1 PV. Vous utilisez 1 point de chance<br>");
+				document.getElementById("Aluckbox").checked = false;
+				document.getElementById("Dluckbox").checked = false;
+				$("#Hluck").val(newHluck);
+			};
+			
 		};
 
 		$("#Mstamina").val(newMstamina);
-		$("#result").append("L'adversaire perd 2 points de vie.<br>");
+		
 		$("#Mstamina").addClass("animated");
 		$("#Mstamina").addClass("bounce");
 		$("#Mstats").addClass("flash");
@@ -93,13 +109,33 @@ $("#fight").click(function(){
 
 		if ($("#Dluckbox").prop("checked") == false){
 			var newHstamina = Hstamina-2;
+			$("#result").append("Vous perdez 2 PV.<br>");
+			document.getElementById("Aluckbox").checked = false;
+			document.getElementById("Dluckbox").checked = false;
+			$("#Hstamina").val(newHstamina);
 		}
 		else{
-			// Vérifier les règles
+			var Luck_dice = parseInt(Math.floor((Math.random() * 12) + 1));
+			console.log("dé chance = " + Luck_dice);
+			if (Luck_dice < Hluck){
+				var newHstamina = Hstamina-1;
+				var newHluck = Hluck - 1;
+				$("#result").append("CHANCE ! Vous esquivez partiellement le coup et ne perdez qu'1 pv. Vous utilisez 1 point de chance<br>");
+				document.getElementById("Aluckbox").checked = false;
+				document.getElementById("Dluckbox").checked = false;
+				$("#Hluck").val(newHluck);
+			}
+			else{
+				var newHstamina = Hstamina-3;
+				var newHluck = Hluck - 1;
+				$("#result").append("PAS DE CHANCE, vous perdez 3 PV. Vous utilisez 1 point de chance<br>");
+				document.getElementById("Aluckbox").checked = false;
+				document.getElementById("Dluckbox").checked = false;
+				$("#Hluck").val(newHluck);
+			};
 		};
 
 		$("#Hstamina").val(newHstamina);
-		$("#result").append("Vous perdez 2 points de vie.<br>");
 		$("#Hstamina").addClass("animated");
 		$("#Hstamina").addClass("bounce");
 		$("#Hstats").addClass("flash");
@@ -107,9 +143,11 @@ $("#fight").click(function(){
 	}
 	else if (Hresultat == Mresultat){
 		setTimeout(function(){
-		$("#result").append("Égalité, le combat continu.<br>");
+		$("#result").append("Égalité, le combat continue...<br>");
 		},2500);
 	}
+
+
 
 	setTimeout(function(){
 			$("#result").append("<hr>");
